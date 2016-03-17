@@ -18,19 +18,50 @@ namespace BackEnd.WebApi.Controllers
         [Route("getAll")]
         public IHttpActionResult Get()
         {
-            return Ok(deptService.GetAllDepartments());
+            try
+            {
+                return Ok(deptService.GetAllDepartments());
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
 
-        // GET: api/Departments/5
+        [Route("getDeptById/{id:guid}", Name = "GetDeptById")]
         public IHttpActionResult Get(Guid id)
         {
-            return StatusCode(HttpStatusCode.PaymentRequired);
+            try
+            {
+                DepartmentDTO dept = deptService.GetDepartmentById(id);
+                if (dept == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    return Ok(dept);
+                }
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+            
         }
 
         [Route("create")]
-        public void Post([FromBody]DepartmentDTO newDept)
+        public IHttpActionResult Post([FromBody]DepartmentDTO newDept)
         {
-            bool isAdded = deptService.AddNewDepartment(newDept);
+            try
+            {
+                bool isAdded = deptService.AddNewDepartment(newDept);
+                return Ok("Department created successfully");
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
 
         // PUT: api/Departments/5

@@ -49,7 +49,8 @@ namespace BackEnd.WebApi
                 TokenEndpointPath = new PathString("/oauth/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
                 Provider = new CustomOAuthProvider(),
-                AccessTokenFormat = new CustomJwtFormat("http://localhost:90")
+                //AccessTokenFormat = new CustomJwtFormat("http://localhost:90")
+                AccessTokenFormat = new CustomJwtFormat(ConfigurationManager.AppSettings["siteUrl"])
             };
 
             // OAuth 2.0 Bearer Access Token Generation
@@ -58,7 +59,8 @@ namespace BackEnd.WebApi
 
         private void ConfigureOAuthTokenConsumption(IAppBuilder app) {
 
-            var issuer = "http://localhost:90";
+            //var issuer = "http://localhost:90";
+            var issuer = ConfigurationManager.AppSettings["siteUrl"];
             string audienceId = ConfigurationManager.AppSettings["as:AudienceId"];
             byte[] audienceSecret = TextEncodings.Base64Url.Decode(ConfigurationManager.AppSettings["as:AudienceSecret"]);
 

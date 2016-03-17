@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <DbDacFx path="F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\obj\Release\AutoScripts\BITS_UVEntities_IncrementalSchemaOnly.dacpac" dacpacAction="Deploy" />
+  <IisApp path="F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\obj\Release\Package\PackageTmp" />
+  <setAcl path="F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

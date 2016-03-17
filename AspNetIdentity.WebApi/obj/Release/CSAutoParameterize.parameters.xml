@@ -3,6 +3,9 @@
   <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=homePC;Initial Catalog=BITS_UV;uid=sa;pwd=abcd1234;" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="F:\\Source_control\\Github\\BackEnd\\AspNetIdentity\.WebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
+  <parameter name="BITS_UVEntities-Web.config Connection String" description="BITS_UVEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/UVModel.csdl|res://*/UVModel.ssdl|res://*/UVModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=homePC;initial catalog=BITS_UV;user id=sa;password=abcd1234;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\Source_control\\Github\\BackEnd\\AspNetIdentity\.WebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BITS_UVEntities']/@connectionString" />
+  </parameter>
   <parameter name="DefaultConnection_DatabasePublish-Web.config Connection String" description="DefaultConnection_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="DefaultConnection_DatabasePublish.ConnetionString" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="F:\\Source_control\\Github\\BackEnd\\AspNetIdentity\.WebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection_DatabasePublish']/@connectionString" />
   </parameter>

@@ -36,7 +36,7 @@ namespace BackEnd.WebApi.Migrations
                 JoinDate = DateTime.Now.AddYears(-3)
             };
 
-            manager.Create(user, "MySuperP@ss!");
+            manager.Create(user, "Abcd@1234");
 
             if (roleManager.Roles.Count() == 0)
             {

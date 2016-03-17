@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="UVBackEnd" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="bpdcapisrv" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^F:\\Source_control\\Github\\BackEnd\\AspNetIdentity\.WebApi\\obj\\Release\\Package\\PackageTmp$" />
     <parameterEntry kind="ProviderPath" scope="setAcl" match="^F:\\Source_control\\Github\\BackEnd\\AspNetIdentity\.WebApi\\obj\\Release\\Package\\PackageTmp$" />
   </parameter>
-  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:bpdc.database.windows.net,1433;Initial Catalog=BITS_UV;User Id=abhiroop@bpdc;Password=abcd@1234" tags="">
+  <parameter name="BITS_UVEntities-Web.config Connection String" description="" value="metadata=res://*/UVModel.csdl|res://*/UVModel.ssdl|res://*/UVModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=tcp:bpdc.database.windows.net,1433;initial catalog=bpdc_uv;user id=abhiroop@bpdc;password=abcd@1234;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="F:\\Source_control\\Github\\BackEnd\\AspNetIdentity\.WebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BITS_UVEntities']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:bpdc.database.windows.net,1433;Initial Catalog=bpdc_uv;User Id=abhiroop@bpdc;Password=abcd@1234" tags="">
     <parameterEntry kind="XmlFile" scope="F:\\Source_control\\Github\\BackEnd\\AspNetIdentity\.WebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
 </parameters>

@@ -1,0 +1,16 @@
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Release\BackEnd.Service.dll.config
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Release\BackEnd.Service.dll
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Release\BackEnd.Service.pdb
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Release\BackEnd.BusinessDTO.dll
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Release\BackEnd.DataModel.dll
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Release\BackEnd.Logger.dll
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Release\EntityFramework.dll
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Release\EntityFramework.SqlServer.dll
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Release\BackEnd.BusinessDTO.pdb
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Release\BackEnd.DataModel.pdb
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Release\BackEnd.Logger.pdb
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Release\EntityFramework.xml
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Release\EntityFramework.SqlServer.xml
+F:\Source_control\Github\BackEnd\BackEnd.Service\obj\Release\BackEnd.Service.csprojResolveAssemblyReference.cache
+F:\Source_control\Github\BackEnd\BackEnd.Service\obj\Release\BackEnd.Service.dll
+F:\Source_control\Github\BackEnd\BackEnd.Service\obj\Release\BackEnd.Service.pdb
