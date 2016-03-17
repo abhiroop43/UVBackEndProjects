@@ -1,0 +1,10 @@
+F:\Source_control\Github\BackEnd\BackEnd.DataModel\bin\Debug\BackEnd.DataModel.dll.config
+F:\Source_control\Github\BackEnd\BackEnd.DataModel\bin\Debug\BackEnd.DataModel.dll
+F:\Source_control\Github\BackEnd\BackEnd.DataModel\bin\Debug\BackEnd.DataModel.pdb
+F:\Source_control\Github\BackEnd\BackEnd.DataModel\bin\Debug\EntityFramework.dll
+F:\Source_control\Github\BackEnd\BackEnd.DataModel\bin\Debug\EntityFramework.SqlServer.dll
+F:\Source_control\Github\BackEnd\BackEnd.DataModel\bin\Debug\EntityFramework.xml
+F:\Source_control\Github\BackEnd\BackEnd.DataModel\bin\Debug\EntityFramework.SqlServer.xml
+F:\Source_control\Github\BackEnd\BackEnd.DataModel\obj\Debug\BackEnd.DataModel.csprojResolveAssemblyReference.cache
+F:\Source_control\Github\BackEnd\BackEnd.DataModel\obj\Debug\BackEnd.DataModel.dll
+F:\Source_control\Github\BackEnd\BackEnd.DataModel\obj\Debug\BackEnd.DataModel.pdb

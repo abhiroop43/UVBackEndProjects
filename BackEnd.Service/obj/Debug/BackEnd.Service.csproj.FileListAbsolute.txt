@@ -1,0 +1,16 @@
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Debug\BackEnd.Service.dll.config
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Debug\BackEnd.Service.dll
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Debug\BackEnd.Service.pdb
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Debug\BackEnd.BusinessDTO.dll
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Debug\BackEnd.DataModel.dll
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Debug\BackEnd.Logger.dll
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Debug\EntityFramework.dll
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Debug\EntityFramework.SqlServer.dll
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Debug\BackEnd.BusinessDTO.pdb
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Debug\BackEnd.DataModel.pdb
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Debug\BackEnd.Logger.pdb
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Debug\EntityFramework.xml
+F:\Source_control\Github\BackEnd\BackEnd.Service\bin\Debug\EntityFramework.SqlServer.xml
+F:\Source_control\Github\BackEnd\BackEnd.Service\obj\Debug\BackEnd.Service.csprojResolveAssemblyReference.cache
+F:\Source_control\Github\BackEnd\BackEnd.Service\obj\Debug\BackEnd.Service.dll
+F:\Source_control\Github\BackEnd\BackEnd.Service\obj\Debug\BackEnd.Service.pdb

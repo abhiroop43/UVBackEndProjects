@@ -46,3 +46,9 @@ F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\obj\Debug\BackEnd.WebApi.
 F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\obj\Debug\BackEnd.WebApi.dll
 F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\obj\Debug\BackEnd.WebApi.pdb
 F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\obj\Debug\BackEnd.WebApi.csprojResolveAssemblyReference.cache
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\BackEnd.BusinessDTO.dll
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\BackEnd.Service.dll
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\BackEnd.DataModel.dll
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\BackEnd.BusinessDTO.pdb
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\BackEnd.Service.pdb
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\BackEnd.DataModel.pdb

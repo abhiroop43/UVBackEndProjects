@@ -1,0 +1,5 @@
+F:\Source_control\Github\BackEnd\BackEnd.Logger\bin\Debug\BackEnd.Logger.dll
+F:\Source_control\Github\BackEnd\BackEnd.Logger\bin\Debug\BackEnd.Logger.pdb
+F:\Source_control\Github\BackEnd\BackEnd.Logger\obj\Debug\BackEnd.Logger.csprojResolveAssemblyReference.cache
+F:\Source_control\Github\BackEnd\BackEnd.Logger\obj\Debug\BackEnd.Logger.dll
+F:\Source_control\Github\BackEnd\BackEnd.Logger\obj\Debug\BackEnd.Logger.pdb

@@ -147,6 +147,7 @@
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\ClaimsController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Infrastructure\ApplicationDbContext.cs" />
@@ -179,7 +180,16 @@
       <DependentUpon>201501171041277_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BackEnd.BusinessDTO\BackEnd.BusinessDTO.csproj">
+      <Project>{b0986f84-8961-424d-83ee-25756b7db24a}</Project>
+      <Name>BackEnd.BusinessDTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackEnd.Service\BackEnd.Service.csproj">
+      <Project>{df68caa5-086b-4da8-b687-64ad65184051}</Project>
+      <Name>BackEnd.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,0 +1,5 @@
+F:\Source_control\Github\BackEnd\BackEnd.BusinessDTO\bin\Debug\BackEnd.BusinessDTO.dll
+F:\Source_control\Github\BackEnd\BackEnd.BusinessDTO\bin\Debug\BackEnd.BusinessDTO.pdb
+F:\Source_control\Github\BackEnd\BackEnd.BusinessDTO\obj\Debug\BackEnd.BusinessDTO.csprojResolveAssemblyReference.cache
+F:\Source_control\Github\BackEnd\BackEnd.BusinessDTO\obj\Debug\BackEnd.BusinessDTO.dll
+F:\Source_control\Github\BackEnd\BackEnd.BusinessDTO\obj\Debug\BackEnd.BusinessDTO.pdb
