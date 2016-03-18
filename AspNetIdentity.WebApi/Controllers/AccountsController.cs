@@ -59,6 +59,22 @@ namespace BackEnd.WebApi.Controllers
 
         }
 
+        [Authorize]
+        [Route("user/getCurrentUserDetails", Name = "GetCurrentUserDetails")]
+        public async Task<IHttpActionResult> GetCurrentUserDetails()
+        {
+            string username = RequestContext.Principal.Identity.Name;
+
+            var user = await this.AppUserManager.FindByNameAsync(username);
+
+            if (user != null)
+            {
+                return Ok(this.TheModelFactory.Create(user));
+            }
+
+            return NotFound();
+        }
+
         [AllowAnonymous]
         [Route("create")]
         public async Task<IHttpActionResult> CreateUser(CreateUserBindingModel createUserModel)
