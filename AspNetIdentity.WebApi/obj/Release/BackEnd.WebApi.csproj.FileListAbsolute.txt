@@ -52,3 +52,6 @@ F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\obj\Release\BackEnd.WebAp
 F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\obj\Release\BackEnd.WebApi.csproj.GenerateResource.Cache
 F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\obj\Release\BackEnd.WebApi.dll
 F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\obj\Release\BackEnd.WebApi.pdb
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\System.Web.Http.Cors.dll
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\System.Web.Http.Cors.xml
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\System.IdentityModel.Tokens.Jwt.pdb

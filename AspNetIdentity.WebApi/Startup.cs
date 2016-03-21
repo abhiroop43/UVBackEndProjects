@@ -12,6 +12,7 @@ using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using BackEnd.WebApi.Infrastructure;
 using BackEnd.WebApi.Providers;
 
@@ -22,17 +23,20 @@ namespace BackEnd.WebApi
         public void Configuration(IAppBuilder app)
         {
             HttpConfiguration httpConfig = new HttpConfiguration();
+            //var cors = new EnableCorsAttribute("http://localhost:52442", "*", "*");
+            //httpConfig.EnableCors(cors);
+            var cors = new CustomCorsPolicyAttribute();
+            
 
             ConfigureOAuthTokenGeneration(app);
 
             ConfigureOAuthTokenConsumption(app);
 
             ConfigureWebApi(httpConfig);
-
-            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+            httpConfig.EnableCors(cors);
+            //app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
             app.UseWebApi(httpConfig);
-
         }
 
         private void ConfigureOAuthTokenGeneration(IAppBuilder app)
