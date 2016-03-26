@@ -57,8 +57,12 @@ namespace BackEnd.WebApi.Models
         public string Username { get; set; }
 
         [Required]
-        [Display(Name = "Full Name")]
-        public string FullName { get; set; }
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string Lastname { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
@@ -68,9 +72,11 @@ namespace BackEnd.WebApi.Models
         [Required]
         [Display(Name = "IsActive")]
         public bool EmailConfirmed { get; set; }
+        //[Display(Name = "Old Role Id")]
+        //public string OldRoleId { get; set; }
 
-        [Display(Name = "Role Name")]
-        public string RoleName { get; set; }
+        //[Display(Name = "New Role Name")]
+        //public string NewRoleId { get; set; }
     }
 
     public class ChangePasswordBindingModel

@@ -118,7 +118,7 @@ namespace BackEnd.WebApi.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [System.Web.Http.HttpPut]
+        [HttpPut]
         [Route("updateUser", Name = "UpdateUser")]
         public async Task<IHttpActionResult> UpdateUser([FromBody]UpdateUserBindingModel updateUserModel)
         {
@@ -128,21 +128,53 @@ namespace BackEnd.WebApi.Controllers
             }
 
             var appUser = await this.AppUserManager.FindByIdAsync(updateUserModel.Id);
-            if (updateUserModel.FullName.Trim().Split(' ').Count() > 1)
-            {
-                appUser.FirstName = updateUserModel.FullName.Trim().Split(' ')[0];
-                appUser.LastName = updateUserModel.FullName.Trim().Split(' ')[1];
-            }
-
+            
+            appUser.FirstName = updateUserModel.FirstName;
+            appUser.LastName = updateUserModel.Lastname;
             appUser.JoinDate = updateUserModel.JoinDate;
             appUser.Email = updateUserModel.Email;
             appUser.EmailConfirmed = updateUserModel.EmailConfirmed;
+
             IdentityResult updateUserResult = await this.AppUserManager.UpdateAsync(appUser);
 
             if (!updateUserResult.Succeeded)
             {
                 return GetErrorResult(updateUserResult);
             }
+
+            //update user roles - DEPRECATED AS NEW REQUEST WILL BE MADE FROM CLIENT//
+            //if (updateUserModel.OldRoleId != updateUserModel.NewRoleId)
+            //{
+            //    var roleModel = new UsersInRoleModel
+            //    {
+            //        Id = updateUserModel.OldRoleId,
+            //        RemovedUsers = new List<string> {updateUserModel.Id},
+            //        EnrolledUsers = new List<string>()
+            //    };
+            //    var rolesController = new RolesController();
+            //    var oldRoleDeleteStatus = await rolesController.ManageUsersInRole(roleModel);
+
+            //    if (oldRoleDeleteStatus == Ok())
+            //    {
+            //        var newRole = new UsersInRoleModel
+            //        {
+            //            Id = updateUserModel.NewRoleId,
+            //            EnrolledUsers = new List<string> {updateUserModel.Id},
+            //            RemovedUsers = new List<string>()
+            //        };
+            //        var newRoleDeleteStatus = await rolesController.ManageUsersInRole(newRole);
+            //        if (newRoleDeleteStatus != Ok())
+            //        {
+            //            return BadRequest("Failed to add new role");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        return BadRequest("Failed to remove old role");
+            //    }
+                
+            //}
+            //end of update user roles//
 
             Uri locationHeader = new Uri(Url.Link("GetUserById", new { id = appUser.Id }));
 
