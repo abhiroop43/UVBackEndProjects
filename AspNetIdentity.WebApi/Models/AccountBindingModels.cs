@@ -41,6 +41,38 @@ namespace BackEnd.WebApi.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class UpdateUserBindingModel
+    {
+        [Required]
+        [Display(Name = "UserId")]
+        public string Id { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Username")]
+        public string Username { get; set; }
+
+        [Required]
+        [Display(Name = "Full Name")]
+        public string FullName { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "JoinDate")]
+        public DateTime JoinDate { get; set; }
+
+        [Required]
+        [Display(Name = "IsActive")]
+        public bool EmailConfirmed { get; set; }
+
+        [Display(Name = "Role Name")]
+        public string RoleName { get; set; }
+    }
+
     public class ChangePasswordBindingModel
     {
        

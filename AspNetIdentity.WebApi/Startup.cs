@@ -35,7 +35,7 @@ namespace BackEnd.WebApi
             ConfigureWebApi(httpConfig);
             httpConfig.EnableCors(cors);
             //app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
-
+            //Swashbuckle.Bootstrapper.Init(httpConfig);
             app.UseWebApi(httpConfig);
         }
 

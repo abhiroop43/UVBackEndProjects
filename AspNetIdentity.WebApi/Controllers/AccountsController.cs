@@ -17,7 +17,7 @@ namespace BackEnd.WebApi.Controllers
     public class AccountsController : BaseApiController
     {
 
-        [Authorize(Roles="Admin")]
+        [Authorize(Roles = "Admin")]
         [Route("users")]
         public IHttpActionResult GetUsers()
         {
@@ -117,6 +117,39 @@ namespace BackEnd.WebApi.Controllers
 
         }
 
+        [Authorize(Roles = "Admin")]
+        [System.Web.Http.HttpPut]
+        [Route("updateUser", Name = "UpdateUser")]
+        public async Task<IHttpActionResult> UpdateUser([FromBody]UpdateUserBindingModel updateUserModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var appUser = await this.AppUserManager.FindByIdAsync(updateUserModel.Id);
+            if (updateUserModel.FullName.Trim().Split(' ').Count() > 1)
+            {
+                appUser.FirstName = updateUserModel.FullName.Trim().Split(' ')[0];
+                appUser.LastName = updateUserModel.FullName.Trim().Split(' ')[1];
+            }
+
+            appUser.JoinDate = updateUserModel.JoinDate;
+            appUser.Email = updateUserModel.Email;
+            appUser.EmailConfirmed = updateUserModel.EmailConfirmed;
+            IdentityResult updateUserResult = await this.AppUserManager.UpdateAsync(appUser);
+
+            if (!updateUserResult.Succeeded)
+            {
+                return GetErrorResult(updateUserResult);
+            }
+
+            Uri locationHeader = new Uri(Url.Link("GetUserById", new { id = appUser.Id }));
+
+            return Ok(locationHeader);
+
+        }
+
         [AllowAnonymous]
         [HttpGet]
         [Route("ConfirmEmail", Name = "ConfirmEmailRoute")]
@@ -182,10 +215,10 @@ namespace BackEnd.WebApi.Controllers
             }
 
             return NotFound();
-          
+
         }
 
-        [Authorize(Roles="Admin")]
+        [Authorize(Roles = "Admin")]
         [Route("user/{id:guid}/roles")]
         [HttpPut]
         public async Task<IHttpActionResult> AssignRolesToUser([FromUri] string id, [FromBody] string[] rolesToAssign)
@@ -197,12 +230,13 @@ namespace BackEnd.WebApi.Controllers
             {
                 return NotFound();
             }
-            
+
             var currentRoles = await this.AppUserManager.GetRolesAsync(appUser.Id);
 
             var rolesNotExists = rolesToAssign.Except(this.AppRoleManager.Roles.Select(x => x.Name)).ToArray();
 
-            if (rolesNotExists.Count() > 0) {
+            if (rolesNotExists.Count() > 0)
+            {
 
                 ModelState.AddModelError("", string.Format("Roles '{0}' does not exixts in the system", string.Join(",", rolesNotExists)));
                 return BadRequest(ModelState);
@@ -231,14 +265,15 @@ namespace BackEnd.WebApi.Controllers
         [Authorize(Roles = "Admin")]
         [Route("user/{id:guid}/assignclaims")]
         [HttpPut]
-        public async Task<IHttpActionResult> AssignClaimsToUser([FromUri] string id, [FromBody] List<ClaimBindingModel> claimsToAssign) {
+        public async Task<IHttpActionResult> AssignClaimsToUser([FromUri] string id, [FromBody] List<ClaimBindingModel> claimsToAssign)
+        {
 
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-             var appUser = await this.AppUserManager.FindByIdAsync(id);
+            var appUser = await this.AppUserManager.FindByIdAsync(id);
 
             if (appUser == null)
             {
@@ -247,14 +282,15 @@ namespace BackEnd.WebApi.Controllers
 
             foreach (ClaimBindingModel claimModel in claimsToAssign)
             {
-                if (appUser.Claims.Any(c => c.ClaimType == claimModel.Type)) {
-                   
+                if (appUser.Claims.Any(c => c.ClaimType == claimModel.Type))
+                {
+
                     await this.AppUserManager.RemoveClaimAsync(id, ExtendedClaimsProvider.CreateClaim(claimModel.Type, claimModel.Value));
                 }
 
                 await this.AppUserManager.AddClaimAsync(id, ExtendedClaimsProvider.CreateClaim(claimModel.Type, claimModel.Value));
             }
-            
+
             return Ok();
         }
 

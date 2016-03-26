@@ -55,3 +55,9 @@ F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\obj\Release\BackEnd.WebAp
 F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\System.Web.Http.Cors.dll
 F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\System.Web.Http.Cors.xml
 F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\System.IdentityModel.Tokens.Jwt.pdb
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\BackEnd.WebApi.XML
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\Microsoft.Web.Infrastructure.dll
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\Swashbuckle.Core.dll
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\System.Web.Http.WebHost.dll
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\WebActivatorEx.dll
+F:\Source_control\Github\BackEnd\AspNetIdentity.WebApi\bin\System.Web.Http.WebHost.xml
