@@ -15,6 +15,6 @@ namespace BackEnd.BusinessDTO
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public Guid DepartmentId { get; set; }
-        public bool isHOD { get; set; }
+        public bool IsHod { get; set; }
     }
 }

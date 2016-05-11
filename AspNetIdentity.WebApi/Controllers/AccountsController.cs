@@ -118,7 +118,7 @@ namespace BackEnd.WebApi.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPut]
+        //[HttpPut]
         [Route("updateUser", Name = "UpdateUser")]
         public async Task<IHttpActionResult> UpdateUser([FromBody]UpdateUserBindingModel updateUserModel)
         {
@@ -129,8 +129,8 @@ namespace BackEnd.WebApi.Controllers
 
             var appUser = await this.AppUserManager.FindByIdAsync(updateUserModel.Id);
             
-            appUser.FirstName = updateUserModel.FirstName;
-            appUser.LastName = updateUserModel.Lastname;
+            appUser.FirstName = updateUserModel.FullName.Split(' ')[0];
+            appUser.LastName = updateUserModel.FullName.Split(' ')[1];
             appUser.JoinDate = updateUserModel.JoinDate;
             appUser.Email = updateUserModel.Email;
             appUser.EmailConfirmed = updateUserModel.EmailConfirmed;
@@ -267,7 +267,7 @@ namespace BackEnd.WebApi.Controllers
 
             var rolesNotExists = rolesToAssign.Except(this.AppRoleManager.Roles.Select(x => x.Name)).ToArray();
 
-            if (rolesNotExists.Count() > 0)
+            if (rolesNotExists.Any())
             {
 
                 ModelState.AddModelError("", string.Format("Roles '{0}' does not exixts in the system", string.Join(",", rolesNotExists)));

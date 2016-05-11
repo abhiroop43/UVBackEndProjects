@@ -44,7 +44,7 @@ namespace BackEnd.WebApi.Models
     public class UpdateUserBindingModel
     {
         [Required]
-        [Display(Name = "UserId")]
+        [Display(Name = "Id")]
         public string Id { get; set; }
 
         [Required]
@@ -56,13 +56,16 @@ namespace BackEnd.WebApi.Models
         [Display(Name = "Username")]
         public string Username { get; set; }
 
-        [Required]
-        [Display(Name = "First Name")]
-        public string FirstName { get; set; }
+        //[Required]
+        //[Display(Name = "First Name")]
+        //public string FirstName { get; set; }
 
+        //[Required]
+        //[Display(Name = "Last Name")]
+        //public string Lastname { get; set; }
         [Required]
-        [Display(Name = "Last Name")]
-        public string Lastname { get; set; }
+        [Display(Name = "FullName")]
+        public string FullName { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
@@ -70,7 +73,7 @@ namespace BackEnd.WebApi.Models
         public DateTime JoinDate { get; set; }
 
         [Required]
-        [Display(Name = "IsActive")]
+        [Display(Name = "EmailConfirmed")]
         public bool EmailConfirmed { get; set; }
         //[Display(Name = "Old Role Id")]
         //public string OldRoleId { get; set; }

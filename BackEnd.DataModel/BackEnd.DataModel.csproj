@@ -51,7 +51,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>UVModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AspNetUser.cs">
+      <DependentUpon>UVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>UVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>UVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cours.cs">
+      <DependentUpon>UVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseEnrollment.cs">
       <DependentUpon>UVModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Department.cs">

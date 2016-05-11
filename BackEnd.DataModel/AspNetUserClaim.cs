@@ -12,15 +12,13 @@ namespace BackEnd.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class DepartmentInstructor
+    public partial class AspNetUserClaim
     {
-        public string DeptInstructorId { get; set; }
-        public string DepartmentId { get; set; }
+        public int Id { get; set; }
         public string UserId { get; set; }
-        public bool IsHOD { get; set; }
-        public Nullable<bool> IsActive { get; set; }
+        public string ClaimType { get; set; }
+        public string ClaimValue { get; set; }
     
         public virtual AspNetUser AspNetUser { get; set; }
-        public virtual Department Department { get; set; }
     }
 }

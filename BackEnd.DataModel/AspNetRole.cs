@@ -12,26 +12,18 @@ namespace BackEnd.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Department
+    public partial class AspNetRole
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Department()
+        public AspNetRole()
         {
-            this.Courses = new HashSet<Cours>();
-            this.DepartmentInstructors = new HashSet<DepartmentInstructor>();
+            this.AspNetUsers = new HashSet<AspNetUser>();
         }
     
         public string Id { get; set; }
-        public string DepartmentName { get; set; }
-        public System.DateTime CreatedOn { get; set; }
-        public string CreatedBy { get; set; }
-        public Nullable<System.DateTime> UpdatedOn { get; set; }
-        public string UpdatedBy { get; set; }
-        public bool IsActive { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cours> Courses { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DepartmentInstructor> DepartmentInstructors { get; set; }
+        public virtual ICollection<AspNetUser> AspNetUsers { get; set; }
     }
 }

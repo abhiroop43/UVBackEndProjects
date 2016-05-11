@@ -16,5 +16,7 @@ namespace BackEnd.BusinessDTO
         public Guid? UpdatedBy { get; set; }
         public bool IsActive { get; set; }
         public List<UsersDTO> Instructors { get; set; }
+        public List<UsersDTO> AddNewInstructors { get; set; }
+        public List<UsersDTO> RemoveCurrentInstructors { get; set; }
     }
 }

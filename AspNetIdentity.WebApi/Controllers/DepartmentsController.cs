@@ -16,6 +16,7 @@ namespace BackEnd.WebApi.Controllers
         DepartmentService deptService = new DepartmentService();
 
         [Route("getAll")]
+        [HttpGet]
         public IHttpActionResult Get()
         {
             try
@@ -29,6 +30,7 @@ namespace BackEnd.WebApi.Controllers
         }
 
         [Route("getDeptById/{id:guid}", Name = "GetDeptById")]
+        [HttpGet]
         public IHttpActionResult Get(Guid id)
         {
             try
@@ -51,6 +53,7 @@ namespace BackEnd.WebApi.Controllers
         }
 
         [Route("create")]
+        [HttpPost]
         public IHttpActionResult Post([FromBody]DepartmentDTO newDept)
         {
             try
@@ -64,14 +67,34 @@ namespace BackEnd.WebApi.Controllers
             }
         }
 
-        // PUT: api/Departments/5
-        public void Put(int id, [FromBody]string value)
+        [Route("updateDept/{id:guid}", Name = "UpdateDept")]
+        [HttpPut]
+        public IHttpActionResult Put(Guid id, [FromBody]DepartmentDTO updatedDept)
         {
+            try
+            {
+                bool isUpdated = deptService.UpdateDepartment(id, updatedDept);
+                return Ok("Department updated successfully");
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
 
-        // DELETE: api/Departments/5
-        public void Delete(int id)
+        [Route("deleteDept/{id:guid}", Name = "DeleteDept")]
+        [HttpDelete]
+        public IHttpActionResult Delete(Guid id)
         {
+            try
+            {
+                bool isDeleted = deptService.DeleteDepartment(id);
+                return Ok("Department deleted successfully");
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
     }
 }

@@ -54,9 +54,9 @@ namespace BackEnd.WebApi
                         // you'll need to implement a custom IDocumentFilter and/or IOperationFilter to set these properties
                         // according to your specific authorization implementation
                         //
-                        //c.BasicAuth("basic")
-                        //    .Description("Basic HTTP Authentication");
-                        //
+                        c.BasicAuth("basic")
+                            .Description("Basic HTTP Authentication");
+
                         c.ApiKey("apiKey")
                             .Description("API Key Authentication")
                             .Name("apiKey")

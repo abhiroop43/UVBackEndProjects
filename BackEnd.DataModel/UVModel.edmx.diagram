@@ -5,11 +5,23 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="53a318ed1c5e49399e029b30854bc314" Name="Diagram1">
-        <EntityTypeShape EntityType="BITS_UVModel.AspNetUser" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="BITS_UVModel.Department" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="BITS_UVModel.DepartmentInstructor" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
-        <AssociationConnector Association="BITS_UVModel.FK_DepartmentInstructors_AspNetUsers" ManuallyRouted="false" />
-        <AssociationConnector Association="BITS_UVModel.FK_DepartmentInstructors_Departments" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BITS_UVModel.AspNetRole" Width="1.5" PointX="0.75" PointY="8.625" />
+        <EntityTypeShape EntityType="BITS_UVModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="20.75" />
+        <EntityTypeShape EntityType="BITS_UVModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="18.25" />
+        <EntityTypeShape EntityType="BITS_UVModel.AspNetUser" Width="1.5" PointX="3" PointY="6.75" />
+        <EntityTypeShape EntityType="BITS_UVModel.CourseEnrollment" Width="1.5" PointX="5.25" PointY="7.75" />
+        <EntityTypeShape EntityType="BITS_UVModel.Cours" Width="1.5" PointX="5.25" PointY="3.875" />
+        <EntityTypeShape EntityType="BITS_UVModel.DepartmentInstructor" Width="1.5" PointX="8.25" PointY="8.25" />
+        <EntityTypeShape EntityType="BITS_UVModel.Department" Width="1.5" PointX="3" PointY="3" />
+        <AssociationConnector Association="BITS_UVModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="BITS_UVModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="BITS_UVModel.FK_CourseEnrollments_AspNetUsers" />
+        <AssociationConnector Association="BITS_UVModel.FK_Courses_AspNetUsers" />
+        <AssociationConnector Association="BITS_UVModel.FK_DepartmentInstructors_AspNetUsers" />
+        <AssociationConnector Association="BITS_UVModel.FK_CourseEnrollments_Courses" />
+        <AssociationConnector Association="BITS_UVModel.FK_Courses_Departments" />
+        <AssociationConnector Association="BITS_UVModel.FK_DepartmentInstructors_Departments" />
+        <AssociationConnector Association="BITS_UVModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
