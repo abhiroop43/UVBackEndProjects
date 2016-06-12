@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using BackEnd.BusinessDTO;
@@ -16,24 +17,30 @@ namespace BackEnd.Service
             using (BITS_UVEntities dbcontext = new BITS_UVEntities())
             {
                 var query = (from dept in dbcontext.Departments
-                                 join deptIns in dbcontext.DepartmentInstructors on dept.Id equals deptIns.DepartmentId
+                             join deptIns in dbcontext.DepartmentInstructors on dept.Id equals deptIns.DepartmentId
                              where dept.IsActive
                              select dept).ToList();
+
+                //var query = from dept in dbcontext.Departments
+                //            from deptIns in dbcontext.DepartmentInstructors
+                //            from users in dbcontext.AspNetUsers
+                //            where (dept.Id == deptIns.DepartmentId) && (deptIns.UserId == users.Id)
+                //            select new { dept, deptIns, users };
 
                 if (query.Any())
                 {
                     List<DepartmentDTO> departmentList = new List<DepartmentDTO>();
-                    foreach (Department dept in query)
+                    foreach (var dataRow in query)
                     {
                         DepartmentDTO deptToList = new DepartmentDTO()
                         {
-                            DepartmentId = Guid.Parse(dept.Id),
-                            CreatedOn = dept.CreatedOn,
-                            CreatedBy = Guid.Parse(dept.CreatedBy),
-                            UpdatedOn = dept.UpdatedOn,
-                            UpdatedBy = !string.IsNullOrEmpty(dept.UpdatedBy) ? Guid.Parse(dept.UpdatedBy) : Guid.Empty,
-                            DepartmentName = dept.DepartmentName,
-                            IsActive = dept.IsActive
+                            DepartmentId = Guid.Parse(dataRow.Id),
+                            CreatedOn = dataRow.CreatedOn,
+                            CreatedBy = Guid.Parse(dataRow.CreatedBy),
+                            UpdatedOn = dataRow.UpdatedOn,
+                            UpdatedBy = !string.IsNullOrEmpty(dataRow.UpdatedBy) ? Guid.Parse(dataRow.UpdatedBy) : Guid.Empty,
+                            DepartmentName = dataRow.DepartmentName,
+                            IsActive = dataRow.IsActive
                         };
                         departmentList.Add(deptToList);
                     }
@@ -47,24 +54,6 @@ namespace BackEnd.Service
         {
             using (BITS_UVEntities dbcontext = new BITS_UVEntities())
             {
-                //var query = (from dept in dbcontext.Departments
-                //    join deptIns in dbcontext.DepartmentInstructors on dept.Id equals deptIns.DepartmentId
-                //    where dept.IsActive
-                //    select dept);
-                //if (query.Any())
-                //{
-                //    DepartmentDTO newDept = new DepartmentDTO
-                //    {
-                //        DepartmentId = Guid.Parse(query.FirstOrDefault().Id),
-                //        CreatedOn = query.FirstOrDefault().CreatedOn,
-                //        CreatedBy = Guid.Parse(query.FirstOrDefault().CreatedBy),
-                //        DepartmentName = query.FirstOrDefault().DepartmentName,
-                //        IsActive = query.FirstOrDefault().IsActive,
-                //        UpdatedBy = !string.IsNullOrEmpty(query.FirstOrDefault().UpdatedBy) ? Guid.Parse(query.FirstOrDefault().UpdatedBy) : Guid.Empty,
-                //        UpdatedOn = query.FirstOrDefault().UpdatedOn
-                //    };
-                //    return newDept;
-                //}
                 var query = from dept in dbcontext.Departments
                              from deptIns in dbcontext.DepartmentInstructors
                              from users in dbcontext.AspNetUsers
